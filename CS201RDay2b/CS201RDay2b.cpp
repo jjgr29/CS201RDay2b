@@ -13,14 +13,25 @@ int main() {
 	int x1, y1, x2, y2;
 	double dist1, dist2;
 	char userInput = 'Y';
+	srand(time(0));
 
 	while (userInput != 'N') {
-		cout << "Please enter x, y values for the first point: ";
-		cin >> x1 >> y1;
+		//generate the numbers?
+		if (userInput == 'G') {
+			//max - min + 1
+			// -10 & 10
+			x1 = rand()%21 - 10;
+			y1 = rand()%21 - 10;
+			x2 = rand()%21 - 10;
+			y2 = rand()%21 - 10;
+		}
+		else {
+			cout << "Please enter x, y values for the first point: ";
+			cin >> x1 >> y1;
 
-		cout << "Please enter x, y values for the second point: ";
-		cin >> x2 >> y2;
-
+			cout << "Please enter x, y values for the second point: ";
+			cin >> x2 >> y2;
+		}
 		//pos(a,b) = a^b
 		//used chatgpt to simplify dist formula
 		//dist1 = pow((pow(x1, 2) + pow(y1, 2)),.5);
